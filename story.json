@@ -1,0 +1,160 @@
+{
+  "start": {
+    "text": "Welcome to Stonerock News Corp's interactive coverage. The company is facing multiple bankruptcies, stranded ships, and erratic decisions by CEO @squidopiaomgcoolnessomgggg.\n\nChoose your protagonist to navigate the chaos:",
+    "status": { "type": "neutral", "text": "Select Character" },
+    "choices": [
+      { "text": "Rick Sick Tick (Exposing the conspiracy)", "next": "rick_start" },
+      { "text": "Chick Van Miller (Trapped in the SS Mortus)", "next": "chick_start" },
+      { "text": "Nerdy News Reporter (Polyester Enthusiast)", "next": "nerdy_start" }
+    ]
+  },
+  "rick_start": {
+    "text": "You are Rick Sick Tick. You just exposed Stonerock on live TV, warning everyone that Squidopia is turning humans into cruise ships. You need to infiltrate Stonerock HQ to stop 'The Process'.\n\nYou arrive at the tall, gray building. Beside it is the abandoned Stonerock HQ. What do you do?",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Kick open the door to Stonerock HQ", "next": "rick_hq" },
+      { "text": "Investigate the seal plushie factory next door", "next": "rick_factory" }
+    ]
+  },
+  "rick_factory": {
+    "text": "You enter the factory. The Nerdy News Reporter runs inside, grabs a plushie, and screams: 'GUYS!!! IT'S 100% POLYESTER!!!'\n\nNow that the distraction is sorted, you approach the abandoned Stonerock HQ.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Kick open the door to Stonerock HQ", "next": "rick_hq" }
+    ]
+  },
+  "rick_hq": {
+    "text": "You step into the modern waiting room. You spot a vending machine selling StonerockCoin for $0.000000000000000001.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Put a penny in to buy the dip", "next": "rick_vending_death" },
+      { "text": "Ignore the vending machine and drag everyone to the elevator", "next": "rick_elevator" }
+    ]
+  },
+  "rick_vending_death": {
+    "text": "The vending machine instantly explodes, burying the waiting room under millions of physical StonerockCoins.\n\nYou are trapped beneath worthless metal. Nobody can dig you out.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "rick_elevator": {
+    "text": "You step into the elevator. The floor display suddenly shifts into negative digits: [Floor: -15] then [Floor: -82].\n\nThe elevator crashes at the bottom. Trevor No is blocking the door.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Ask Trevor to let you pass", "next": "rick_trevor_no" },
+      { "text": "Have the Nerdy Reporter tackle him", "next": "rick_tackle" }
+    ]
+  },
+  "rick_trevor_no": {
+    "text": "You ask Trevor if you can pass.\n\nTrevor No: 'No.'\n\nYou are stuck in the elevator forever.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "rick_tackle": {
+    "text": "The Nerdy News Reporter lunges forward, misses, slips, but then gets a surge of confidence from his suit:\n\n'IT'S 100% POLYESTER! AND YOU'RE ABOUT TO GET POLYESTERED!'\n\nHe tackles Trevor No, clearing the path. You find a dark room where Squidopia is preparing to convert Chick Van Miller into the 'SS Chiccius'.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Distract Chick Ban Miller (the chicken spy) with a worm", "next": "rick_win_truth" },
+      { "text": "Offer Squidopia an investment in StonerockCoin", "next": "rick_scam_death" }
+    ]
+  },
+  "rick_scam_death": {
+    "text": "Squidopia happily takes your money, immediately files for bankruptcy again, and uses his agents to lock you into the reactor hatch.\n\nYou are now part of the auxiliary fuel cell.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "rick_win_truth": {
+    "text": "You throw a worm at the main console. Chick Ban Miller aggressively pecks at the worm, destroying the computer controls for 'The Process'.\n\nSquidopia's plans are ruined! Chick Van Miller is saved, and you broadcast the truth to Orion City once and for all!\n\nYOU WIN!",
+    "status": { "type": "success", "text": "VICTORY" },
+    "choices": [
+      { "text": "Play Again", "next": "start" }
+    ]
+  },
+  "chick_start": {
+    "text": "You are Chick Van Miller, former star reporter. You are trapped in a tight cell deep within the SS Mortus. Squidopia has locked you away to turn you into a cruise ship.\n\nA silhouette emerges from the shadows.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Scream for help", "next": "chick_scream" },
+      { "text": "Whisper: 'Is that you, Peter?'", "next": "chick_peter" }
+    ]
+  },
+  "chick_scream": {
+    "text": "Your screams attract Squidopia's armed Agents. They throw you into the glass containment tube early.\n\n'The Process' begins. You are now the hull of the SS Chiccius.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "chick_peter": {
+    "text": "The silhouette steps forward. It is Peter Pickle, the coworker who vanished after lunch!\n\nPeter: 'I'm afraid... it's too late for us. But you can try the escape hatch before they start the reactor.'",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Search for the ventilation escape hatch", "next": "chick_vents" },
+      { "text": "Wait for Chick Ban Miller to bring the keys", "next": "chick_keys_fail" }
+    ]
+  },
+  "chick_keys_fail": {
+    "text": "Chick Ban Miller appears at the window, but instead of bringing keys, he aggressively pecks at a worm and hops away.\n\nThe Agents find you and begin 'The Process'.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "chick_vents": {
+    "text": "You crawl through the hot, narrow ventilation shaft and emerge on the outer deck of the SS Mortus. Below is the harbor. Squidopia is standing near the reactor hatch.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Jump into the ocean to swim away", "next": "chick_ocean" },
+      { "text": "Throw a stray polyester suit into the nuclear reactor", "next": "chick_win" }
+    ]
+  },
+  "chick_ocean": {
+    "text": "You jump into the ocean. However, you find yourself stranded at sea with zero food, zero water, and zero fuel.\n\nYou survive for 10 days, but Stonerock fails to pay the $2,000 towing fee. You are stuck here.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "chick_win": {
+    "text": "The 100% polyester suit creates a massive static charge in the nuclear reactor. A loud explosion knocks the agents out and forces Squidopia to flee in his jetpack!\n\nYou escape on a life raft, ready to tell the world your story!\n\nYOU WIN!",
+    "status": { "type": "success", "text": "VICTORY" },
+    "choices": [
+      { "text": "Play Again", "next": "start" }
+    ]
+  },
+  "nerdy_start": {
+    "text": "You are the Nerdy News Reporter. Your mommy bought you a brand-new suit. It's 100% Polyester!\n\nYou are standing outside Stonerock HQ. What do you do?",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Show off your polyester suit to Trevor No", "next": "nerdy_show_suit" },
+      { "text": "Look for limited edition StonerockCoin flavors in the vending machine", "next": "nerdy_vending" }
+    ]
+  },
+  "nerdy_show_suit": {
+    "text": "You run up to Trevor No and show off your suit.\n\nTrevor No: 'No.'\n\nYou drop into tears and start crying for your mommy. This is embarrassing.",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "nerdy_vending": {
+    "text": "You put a penny into the vending machine. It explodes! Thousands of coins fly everywhere, but your polyester suit protects you from the blast.\n\nYou tumble down an elevator shaft and land right in front of Squidopia's control desk.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Tackle Trevor No using raw polyester friction", "next": "rick_tackle" },
+      { "text": "Yell 'IS THIS THE END OF STONEROCK???????' into the microphone", "next": "nerdy_yell" }
+    ]
+  },
+  "nerdy_yell": {
+    "text": "You yell 'IS THIS THE END OF STONEROCK???????' so loudly that the sound waves shatter the glass containment unit, releasing Chick Van Miller!\n\nSquidopia is startled and accidentally steps backward into his own nuclear reactor hatch.\n\nYou saved everyone by accident!\n\nYOU WIN!",
+    "status": { "type": "success", "text": "VICTORY" },
+    "choices": [
+      { "text": "Play Again", "next": "start" }
+    ]
+  }
+}
