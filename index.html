@@ -4,110 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stonerock News Corp - Adventure Game</title>
+    <!-- Modern Sans-Serif Fonts for crisp readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-color: #0b0d14;
-            --container-bg: #161922;
-            --text-color: #f1f5f9;
-            --subtext-color: #94a3b8;
-            --accent-color: #ff0055;
-            --accent-glow: rgba(255, 0, 85, 0.25);
-            --green-accent: #00ff66;
-            --border-color: #2e3447;
-            --btn-bg: #1e2330;
-            --btn-hover: #282e40;
+            --bg-color: #08090d;
+            --container-bg: #11141d;
+            --card-bg: #181c28;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent-pink: #ff0055;
+            --accent-pink-glow: rgba(255, 0, 85, 0.25);
+            --green-accent: #00ff88;
+            --green-glow: rgba(0, 255, 136, 0.2);
+            --border-color: #262c3e;
+            --border-hover: #3d4663;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            /* Upgraded monospace stack for MUCH better legibility */
-            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(255, 0, 85, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            padding: 24px 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            line-height: 1.5;
         }
 
-        /* --- TICKER SECTION --- */
+        /* Top News Ticker */
         .ticker-wrap {
             width: 100%;
-            max-width: 800px;
-            background: #000;
-            border: 2px solid var(--accent-color);
-            border-radius: 6px;
-            padding: 12px 16px;
-            margin-bottom: 20px;
-            font-weight: bold;
+            max-width: 820px;
+            background: rgba(13, 15, 22, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-pink);
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin-bottom: 24px;
+            font-family: 'JetBrains Mono', monospace;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.95em;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .ticker-label {
+            color: var(--text-muted);
+            font-weight: 700;
             letter-spacing: 0.5px;
-            box-shadow: 0 0 15px var(--accent-glow);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ticker-label::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-pink);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-pink);
         }
 
         .ticker-red {
-            color: var(--accent-color);
+            color: var(--accent-pink);
+            font-weight: 700;
         }
 
         .ticker-green {
             color: var(--green-accent);
+            font-weight: 700;
         }
 
-        /* --- MAIN GAME CONTAINER --- */
+        /* Main Game Layout */
         .game-container {
             width: 100%;
-            max-width: 800px;
+            max-width: 820px;
             background-color: var(--container-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 35px;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 36px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* --- HEADER --- */
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--green-accent));
+        }
+
         .header {
             text-align: center;
-            border-bottom: 2px dashed var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            color: var(--accent-color);
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px var(--accent-glow);
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
 
         .theme-song {
-            font-style: italic;
-            font-size: 0.9em;
-            color: var(--subtext-color);
-            margin-top: 10px;
-            line-height: 1.4;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* --- STORY DISPLAY --- */
+        /* Story Text Section */
+        .story-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
         .story-text {
-            font-size: 1.15em;
-            line-height: 1.7; /* Generous line spacing makes long text WAY easier to read */
-            margin-bottom: 30px;
-            min-height: 100px;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-main);
             white-space: pre-line;
-            color: var(--text-color);
+            min-height: 100px;
         }
 
-        /* --- CHOICES & BUTTONS --- */
+        /* Choices and Buttons */
         .choices-container {
             display: flex;
             flex-direction: column;
@@ -115,75 +170,117 @@
         }
 
         .btn {
-            background-color: var(--btn-bg);
+            background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-left: 4px solid var(--subtext-color);
-            border-radius: 6px;
-            color: var(--text-color);
-            padding: 16px 20px;
-            font-size: 1em;
-            font-weight: 600;
+            border-radius: 10px;
+            color: var(--text-main);
+            padding: 18px 20px;
+            font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
             text-align: left;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             font-family: inherit;
-            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: transparent;
+            transition: background-color 0.2s ease;
         }
 
         .btn:hover {
-            background-color: var(--btn-hover);
-            border-color: var(--accent-color);
-            border-left: 6px solid var(--accent-color);
-            color: #fff;
-            transform: translateX(6px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background-color: #1e2435;
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            padding-left: 24px;
+        }
+
+        .btn:hover::before {
+            background-color: var(--accent-pink);
         }
 
         .btn-reset {
-            background-color: #2d131b;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
+            background-color: rgba(255, 0, 85, 0.1);
+            border: 1px solid var(--accent-pink);
+            color: var(--accent-pink);
+            font-weight: 600;
+            justify-content: center;
             text-align: center;
-            border-left: 1px solid var(--accent-color);
+            margin-top: 10px;
         }
 
         .btn-reset:hover {
-            background-color: var(--accent-color);
-            color: #fff;
-            border-left: 1px solid var(--accent-color);
+            background-color: var(--accent-pink);
+            color: #ffffff;
+            padding-left: 20px;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--accent-pink-glow);
         }
 
-        /* --- BADGES --- */
-        #status-container {
-            margin-bottom: 15px;
+        .btn-reset:hover::before {
+            background-color: transparent;
         }
 
+        /* Status Badges */
         .status-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             padding: 6px 12px;
-            font-size: 0.85em;
-            font-weight: bold;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            border-radius: 4px;
-            letter-spacing: 1px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .badge-danger {
-            background-color: rgba(255, 0, 85, 0.15);
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
+            background-color: var(--accent-pink-glow);
+            color: var(--accent-pink);
+            border: 1px solid rgba(255, 0, 85, 0.4);
         }
 
         .badge-success {
-            background-color: rgba(0, 255, 102, 0.15);
+            background-color: var(--green-glow);
             color: var(--green-accent);
-            border: 1px solid var(--green-accent);
+            border: 1px solid rgba(0, 255, 136, 0.4);
         }
 
         .badge-neutral {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Mobile tweaks */
+        @media (max-width: 600px) {
+            .game-container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .ticker-wrap {
+                flex-direction: column;
+                gap: 6px;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -191,19 +288,23 @@
 
     <!-- Stonerock Ticker -->
     <div class="ticker-wrap">
-        <span>📡 STONEROCK LIVE TICKER:</span>
+        <span class="ticker-label">STONEROCK LIVE TICKER</span>
         <span id="ticker-status" class="ticker-red">StonerockCoin: Loading...</span>
     </div>
 
     <!-- Main Game Frame -->
     <div class="game-container">
         <div class="header">
-            <h1>STONEROCK NEWS CORP</h1>
-            <div class="theme-song">🎶 S-S-STONEROCK! S-S-STONEROCK! WE MAKE THE BEST SHIPS EVER! OUR DECISIONS ARE ALWAYS CLEVER! 🎶</div>
+            <h1>Stonerock News Corp</h1>
+            <div class="theme-song">🎶 S-S-STONEROCK! WE MAKE THE BEST SHIPS EVER! OUR DECISIONS ARE ALWAYS CLEVER! 🎶</div>
         </div>
 
         <div id="status-container"></div>
-        <div class="story-text" id="story-display">Connecting to Stonerock database...</div>
+        
+        <div class="story-card">
+            <div class="story-text" id="story-display">Connecting to Stonerock database...</div>
+        </div>
+
         <div class="choices-container" id="choices-display"></div>
     </div>
 
