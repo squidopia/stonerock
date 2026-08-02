@@ -1,157 +1,440 @@
 {
   "start": {
-    "text": "Welcome to Stonerock News Corp's interactive coverage. The company is facing multiple bankruptcies, stranded ships, and erratic decisions by CEO @squidopiaomgcoolnessomgggg.\n\nChoose your protagonist to navigate the chaos:",
+    "text": "Welcome to Stonerock News Corp's interactive coverage. The company is facing its first major crisis: stranded ships, solar battery failures, and the launch of the volatile StonerockCoin.\n\nChoose your protagonist to navigate the early chaos:",
     "status": { "type": "neutral", "text": "Select Character" },
     "choices": [
-      { "text": "Rick Sick Tick (Exposing the conspiracy)", "next": "rick_start" },
-      { "text": "Chick Van Miller (Trapped in the SS Mortus)", "next": "chick_start" },
-      { "text": "Nerdy News Reporter (Polyester Enthusiast)", "next": "nerdy_start" }
+      { "text": "Rick Sick Tick (Investigating early financial leaks)", "next": "rick_start" },
+      { "text": "Chick Van Miller (Reporting from the stranded SS Mortus)", "next": "chick_start" },
+      { "text": "Nerdy News Reporter (Handling the live studio broadcast)", "next": "nerdy_start" }
     ]
   },
+
   "rick_start": {
-    "text": "You are Rick Sick Tick. You just exposed Stonerock on live TV, warning everyone that Squidopia is turning humans into cruise ships. You need to infiltrate Stonerock HQ to stop 'The Process'.\n\nYou arrive at the tall, gray building. Beside it is the abandoned Stonerock HQ. What do you do?",
+    "text": "You are Rick Sick Tick, investigative journalist. Stonerock Cruises is rumored to have spent all their money on an unreleased solar ship, leaving their active fleet without fuel or recovery funds. Where do you start?",
     "status": { "type": "neutral", "text": "Rick Sick Tick" },
     "choices": [
-      { "text": "Kick open the door to Stonerock HQ", "next": "rick_hq" },
-      { "text": "Investigate the seal plushie factory next door", "next": "rick_factory" }
+      { "text": "Investigate Orion City Harbor", "next": "rick_investigate_harbor" },
+      { "text": "Infiltrate Stonerock Corporate HQ", "next": "rick_infiltrate_hq" }
     ]
   },
-  "rick_factory": {
-    "text": "You enter the factory. The Nerdy News Reporter runs inside, grabs a plushie, and screams: 'GUYS!!! IT'S 100% POLYESTER!!!'\n\nNow that the distraction is sorted, you approach the abandoned Stonerock HQ.",
+  "rick_investigate_harbor": {
+    "text": "You arrive at the harbor. The docks are empty except for two vessels: a small tugboat and the unreleased eco-friendly solar ship, the SS Piccius.",
     "status": { "type": "neutral", "text": "Rick Sick Tick" },
     "choices": [
-      { "text": "Kick open the door to Stonerock HQ", "next": "rick_hq" }
+      { "text": "Talk to the tugboat crew about the stranded SS Mortus", "next": "rick_talk_crew" },
+      { "text": "Sneak aboard the experimental SS Piccius", "next": "rick_board_piccius" }
     ]
   },
-  "rick_hq": {
-    "text": "You step into the modern waiting room. You spot a vending machine selling StonerockCoin for $0.000000000000000001.",
+  "rick_infiltrate_hq": {
+    "text": "You slip past security at Stonerock HQ. You hear CEO @squidopiaomgcoolnessomgggg arguing with accountants in the back office.",
     "status": { "type": "neutral", "text": "Rick Sick Tick" },
     "choices": [
-      { "text": "Put a penny in to buy the dip", "next": "rick_vending_death" },
-      { "text": "Ignore the vending machine and drag everyone to the elevator", "next": "rick_elevator" }
+      { "text": "Audit the company's financial books on the desk", "next": "rick_audit_books" },
+      { "text": "Intercept a supply truck arriving at the loading dock", "next": "rick_intercept_truck" }
     ]
   },
-  "rick_vending_death": {
-    "text": "The vending machine instantly explodes, burying the waiting room under millions of physical StonerockCoins.\n\nYou are trapped beneath worthless metal. Nobody can dig you out.\n\nIS THIS THE END OF STONEROCK???????",
+  "rick_talk_crew": {
+    "text": "The tugboat captain sighs: 'Stonerock owes us a mere $2,000 towing fee to bring back the SS Mortus. Until they pay, those passengers stay stranded.'",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Pay the $2,000 fee out of your own pocket to save the passengers", "next": "rick_pay_tow_fee" },
+      { "text": "Refuse to pay and let the standoff continue", "next": "rick_refuse_tow" }
+    ]
+  },
+  "rick_pay_tow_fee": {
+    "text": "You pay the fee. The tugboat brings the SS Mortus back safely. However, this leaves you broke, forcing you to look into Stonerock's actual financial records to get your money back.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Head to Stonerock HQ to audit their books", "next": "rick_audit_books" }
+    ]
+  },
+  "rick_refuse_tow": {
+    "text": "You refuse to pay. The SS Mortus remains stranded for another 10 days with no supplies. The passengers blame the news team for not intervening, ruining your journalistic reputation.\n\nIS THIS THE END OF STONEROCK???????",
     "status": { "type": "danger", "text": "GAME OVER" },
     "choices": [
       { "text": "Restart Adventure", "next": "start" }
     ]
   },
-  "rick_elevator": {
-    "text": "You step into the elevator. The floor display suddenly shifts into negative digits: [Floor: -15] then [Floor: -82].\n\nThe elevator crashes at the bottom. Trevor No is blocking the door.",
+  "rick_board_piccius": {
+    "text": "You board the SS Piccius. The deck is lined with massive solar panels, but the battery compartment looks unusually small.",
     "status": { "type": "neutral", "text": "Rick Sick Tick" },
     "choices": [
-      { "text": "Ask Trevor to let you pass", "next": "rick_trevor_no" },
-      { "text": "Have the Nerdy Reporter tackle him", "next": "rick_tackle" }
+      { "text": "Conduct an unauthorized solar test run to Test Port 3", "next": "rick_piccius_solar_test" },
+      { "text": "Search the hold for hidden backup diesel fuel", "next": "rick_piccius_steal_fuel" }
     ]
   },
-  "rick_trevor_no": {
-    "text": "You ask Trevor if you can pass.\n\nTrevor No: 'No.'\n\nYou are stuck in the elevator forever.\n\nIS THIS THE END OF STONEROCK???????",
+  "rick_piccius_solar_test": {
+    "text": "You start the engines. The ship sails smoothly for five minutes before the batteries drain completely, leaving you stranded in the bay without any power. You underestimated the solar requirements.\n\nIS THIS THE END OF STONEROCK???????",
     "status": { "type": "danger", "text": "GAME OVER" },
     "choices": [
       { "text": "Restart Adventure", "next": "start" }
     ]
   },
-  "rick_tackle": {
-    "text": "The Nerdy News Reporter lunges forward, misses, slips, but then gets a surge of confidence from his suit:\n\n'IT'S 100% POLYESTER! AND YOU'RE ABOUT TO GET POLYESTERED!'\n\nHe tackles Trevor No, clearing the path. You find a dark room where Squidopia is preparing to convert Chick Van Miller into the 'SS Chiccius'.",
+  "rick_piccius_steal_fuel": {
+    "text": "You search the hold and find several massive, hidden tanks filled with diesel. The 'eco-friendly' claim is a cover story.",
     "status": { "type": "neutral", "text": "Rick Sick Tick" },
     "choices": [
-      { "text": "Distract Chick Ban Miller (the chicken spy) with a worm", "next": "rick_win_truth" },
-      { "text": "Offer Squidopia an investment in StonerockCoin", "next": "rick_scam_death" }
+      { "text": "Expose the diesel deception on live television", "next": "rick_expose_diesel_lie" }
     ]
   },
-  "rick_scam_death": {
-    "text": "Squidopia happily takes your money, immediately files for bankruptcy again, and uses his agents to lock you into the reactor hatch.\n\nYou are now part of the auxiliary fuel cell.\n\nIS THIS THE END OF STONEROCK???????",
+  "rick_expose_diesel_lie": {
+    "text": "Your report goes live. The public is outraged by the greenwashing scandal. Squidopia calls an emergency press conference to salvage the company's image.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Confront Squidopia directly at the press conference", "next": "rick_confront_squidopia" }
+    ]
+  },
+  "rick_audit_books": {
+    "text": "The ledgers show that Stonerock is entirely bankrupt. Every dollar went into solar panels for the unreleased ship, leaving nothing for fuel or operations.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Expose the bankruptcy and the impending collapse", "next": "rick_expose_scam" },
+      { "text": "Accept a bribe of 1,000,000 StonerockCoins to keep quiet", "next": "rick_bribed" }
+    ]
+  },
+  "rick_bribed": {
+    "text": "You accept the StonerockCoins. Fifteen seconds later, the coin crashes by 99.9999%. You are left completely broke with worthless digital assets and no story.\n\nIS THIS THE END OF STONEROCK???????",
     "status": { "type": "danger", "text": "GAME OVER" },
     "choices": [
       { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "rick_expose_scam": {
+    "text": "Your broadcast reveals the company's bankruptcy. Investors panic, and Squidopia is forced to address the public directly.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Confront Squidopia on stage", "next": "rick_confront_squidopia" }
+    ]
+  },
+  "rick_intercept_truck": {
+    "text": "You stop the delivery truck. The driver is delivering high-capacity batteries destined for the SS Piccius.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Inspect the cargo for safety defects", "next": "rick_inspect_cargo" },
+      { "text": "Hijack the truck to prevent the delivery", "next": "rick_hijack_truck" }
+    ]
+  },
+  "rick_inspect_cargo": {
+    "text": "You inspect the batteries and find they are wired incorrectly, posing a major fire hazard.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Accidentally cause a short circuit while testing a wire", "next": "rick_battery_short" },
+      { "text": "Expose the hazardous solar panel design", "next": "rick_expose_solar_scam" }
+    ]
+  },
+  "rick_battery_short": {
+    "text": "A spark ignites the battery pack. The resulting blast destroys the loading dock and ends your investigation prematurely.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "rick_expose_solar_scam": {
+    "text": "You leak the battery safety reports. The public demands answers. Squidopia is cornered at the HQ entrance.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Confront Squidopia directly", "next": "rick_confront_squidopia" }
+    ]
+  },
+  "rick_hijack_truck": {
+    "text": "You try to drive off with the truck, but the heavy cargo makes it slow and difficult to steer. Stonerock security quickly corners and detains you.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "rick_confront_squidopia": {
+    "text": "You corner Squidopia. He stammers: 'We always ensure everyone is happy! We learned from our mistakes!' He offers to reveal the hybrid solar-diesel plans to settle the controversy.",
+    "status": { "type": "neutral", "text": "Rick Sick Tick" },
+    "choices": [
+      { "text": "Accept the scoop and broadcast the truth to Orion City", "next": "rick_win_truth" }
     ]
   },
   "rick_win_truth": {
-    "text": "You throw a worm at the main console. Chick Ban Miller aggressively pecks at the worm, destroying the computer controls for 'The Process'.\n\nSquidopia's plans are ruined! Chick Van Miller is saved, and you broadcast the truth to Orion City once and for all!\n\nYOU WIN!",
+    "text": "Your report exposes the financial instability and design shortcuts of Stonerock Cruises. You save the public from a massive financial loss, establishing yourself as Orion City's top investigative journalist.\n\nYOU WIN!",
     "status": { "type": "success", "text": "VICTORY" },
     "choices": [
       { "text": "Play Again", "next": "start" }
     ]
   },
+
   "chick_start": {
-    "text": "You are Chick Van Miller, former star reporter. You are trapped in a tight cell deep within the SS Mortus. Squidopia has locked you away to turn you into a cruise ship.\n\nA silhouette emerges from the shadows.",
+    "text": "You are Chick Van Miller, currently aboard the SS Mortus. The ship has been stranded for three days with no supplies, food, or water. What is your first priority?",
     "status": { "type": "neutral", "text": "Chick Van Miller" },
     "choices": [
-      { "text": "Scream for help", "next": "chick_scream" },
-      { "text": "Whisper: 'Is that you, Peter?'", "next": "chick_peter" }
+      { "text": "Ration the remaining survival supplies on board", "next": "chick_ration_supplies" },
+      { "text": "Check the automated navigation controls in the bridge", "next": "chick_check_autopilot" }
     ]
   },
-  "chick_scream": {
-    "text": "Your screams attract Squidopia's armed Agents. They throw you into the glass containment tube early.\n\n'The Process' begins. You are now the hull of the SS Chiccius.\n\nIS THIS THE END OF STONEROCK???????",
+  "chick_ration_supplies": {
+    "text": "You search the galley. There is almost nothing left except some questionable dried seaweed.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Eat the seaweed to keep your strength up", "next": "chick_eat_seaweed" },
+      { "text": "Refuse to eat and hold out for another week", "next": "chick_wait_10_days" }
+    ]
+  },
+  "chick_eat_seaweed": {
+    "text": "The seaweed was contaminated by the ship's leaking auxiliary fuel line. You become too sick to continue your duties.\n\nIS THIS THE END OF STONEROCK???????",
     "status": { "type": "danger", "text": "GAME OVER" },
     "choices": [
       { "text": "Restart Adventure", "next": "start" }
     ]
   },
-  "chick_peter": {
-    "text": "The silhouette steps forward. It is Peter Pickle, the coworker who vanished after lunch!\n\nPeter: 'I'm afraid... it's too late for us. But you can try the escape hatch before they start the reactor.'",
+  "chick_wait_10_days": {
+    "text": "Ten days pass. Miraculously, Stonerock manages to avoid the $2,000 towing fine and sends a supply boat. They spend their last $8,000 on food and water, but buy very little fuel.",
     "status": { "type": "neutral", "text": "Chick Van Miller" },
     "choices": [
-      { "text": "Search for the ventilation escape hatch", "next": "chick_vents" },
-      { "text": "Wait for Chick Ban Miller to bring the keys", "next": "chick_keys_fail" }
+      { "text": "Accept the rescue plan with limited fuel", "next": "chick_saved_supplies_no_fuel" },
+      { "text": "Attempt to swim to the nearest port instead", "next": "chick_swim_port" }
     ]
   },
-  "chick_keys_fail": {
-    "text": "Chick Ban Miller appears at the window, but instead of bringing keys, he aggressively pecks at a worm and hops away.\n\nThe Agents find you and begin 'The Process'.\n\nIS THIS THE END OF STONEROCK???????",
+  "chick_swim_port": {
+    "text": "The nearest port is hundreds of kilometers away. You quickly tire out and have to be rescued by a passing cargo ship, ending your reporting journey.\n\nIS THIS THE END OF STONEROCK???????",
     "status": { "type": "danger", "text": "GAME OVER" },
     "choices": [
       { "text": "Restart Adventure", "next": "start" }
     ]
   },
-  "chick_vents": {
-    "text": "You crawl through the hot, narrow ventilation shaft and emerge on the outer deck of the SS Mortus. Below is the harbor. Squidopia is standing near the reactor hatch.",
+  "chick_saved_supplies_no_fuel": {
+    "text": "The captain notes: 'We need at least 20,000kg of fuel to cross the ocean, but Stonerock only authorized 15,000kg to save money.'",
     "status": { "type": "neutral", "text": "Chick Van Miller" },
     "choices": [
-      { "text": "Jump into the ocean to swim away", "next": "chick_ocean" },
-      { "text": "Throw a stray polyester suit into the nuclear reactor", "next": "chick_win" }
+      { "text": "Proceed with the journey using only 15,000kg of fuel", "next": "chick_buy_15k_fuel" },
+      { "text": "Demand that the captain purchase the full 20,000kg", "next": "chick_buy_full_fuel" }
     ]
   },
-  "chick_ocean": {
-    "text": "You jump into the ocean. However, you find yourself stranded at sea with zero food, zero water, and zero fuel.\n\nYou survive for 10 days, but Stonerock fails to pay the $2,000 towing fee. You are stuck here.\n\nIS THIS THE END OF STONEROCK???????",
+  "chick_buy_15k_fuel": {
+    "text": "You set sail. Miraculously, despite having only 75% of the required fuel, the ship successfully travels from Orion City to New Newport by riding favorable currents.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Prepare the ship for the return trip to Orion City", "next": "chick_cross_ocean_success" },
+      { "text": "Advise the company to sell the ship immediately", "next": "chick_sell_ship" }
+    ]
+  },
+  "chick_buy_full_fuel": {
+    "text": "You demand the extra fuel. Purchasing it drains the company's remaining cash reserves, forcing Stonerock into immediate bankruptcy. The ship is seized by port authorities.\n\nIS THIS THE END OF STONEROCK???????",
     "status": { "type": "danger", "text": "GAME OVER" },
     "choices": [
       { "text": "Restart Adventure", "next": "start" }
     ]
   },
-  "chick_win": {
-    "text": "The 100% polyester suit creates a massive static charge in the nuclear reactor. A loud explosion knocks the agents out and forces Squidopia to flee in his jetpack!\n\nYou escape on a life raft, ready to tell the world your story!\n\nYOU WIN!",
+  "chick_cross_ocean_success": {
+    "text": "On the return leg, you approach the Orion City Bridge. The crew is exhausted and distracted by the fuel shortages.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Take manual control of the helm to guide the ship in", "next": "chick_orion_bridge_approach" }
+    ]
+  },
+  "chick_orion_bridge_approach": {
+    "text": "You attempt to guide the ship, but without formal training, you misjudge the bridge clearance. The ship crashes into the Orion Bridge, resulting in a $200,000 fine.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "chick_sell_ship": {
+    "text": "Stonerock decides to sell the ship. You return to the News HQ to report on the company's survival, but you notice something unusual outside.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Investigate the strange noises near the harbor", "next": "chick_confront_news_hq" }
+    ]
+  },
+  "chick_check_autopilot": {
+    "text": "You examine the navigation system. The autopilot is currently active, but the coordinates seem slightly off.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Shut down the autopilot to steer manually", "next": "chick_disable_autopilot" },
+      { "text": "Leave the autopilot on and hope it corrects itself", "next": "chick_leave_autopilot_on" }
+    ]
+  },
+  "chick_disable_autopilot": {
+    "text": "You shut off the autopilot. Without steady navigation, the ship drifts off-course and strands itself in a shallow bay, complicating recovery efforts.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Wait for a rescue boat to arrive", "next": "chick_wait_10_days" },
+      { "text": "Attempt to restart the automated navigation", "next": "chick_drift_off_course" }
+    ]
+  },
+  "chick_drift_off_course": {
+    "text": "The system glitches during reboot. The ship steers directly into the Orion City Bridge, causing massive structural damage.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "chick_leave_autopilot_on": {
+    "text": "You leave the autopilot active. The ship maintains its heading, but the fuel runs out completely, keeping you stranded until the supply boat arrives.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Wait for the 10-day rescue mark", "next": "chick_wait_10_days" }
+    ]
+  },
+  "chick_confront_news_hq": {
+    "text": "You spot Squidopia purchasing 1,000,000kg of heavy diesel fuel for the supposedly eco-friendly SS Piccius. At the same time, the ship begins moving toward the news building on land.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Film Squidopia buying the fuel to secure a massive scoop", "next": "chick_catch_fuel_buy" },
+      { "text": "Run inside the newsroom to warn everyone about the approaching ship", "next": "chick_warn_newsroom" }
+    ]
+  },
+  "chick_warn_newsroom": {
+    "text": "You run inside to warn the staff, but it is too late. The SS Piccius crashes directly into the news building, destroying the studio.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "chick_catch_fuel_buy": {
+    "text": "You capture clear footage of the fuel purchase. Even though the ship later crashes into the harbor, your footage proves the hybrid design and greenwashing secrets, earning you a journalism award.",
+    "status": { "type": "neutral", "text": "Chick Van Miller" },
+    "choices": [
+      { "text": "Publish the exclusive report", "next": "chick_scoop_win" }
+    ]
+  },
+  "chick_scoop_win": {
+    "text": "Your exclusive footage reveals the truth about Stonerock's fleet operations. You are promoted to senior anchor at Stonerock News Corp.\n\nYOU WIN!",
     "status": { "type": "success", "text": "VICTORY" },
     "choices": [
       { "text": "Play Again", "next": "start" }
     ]
   },
+
   "nerdy_start": {
-    "text": "You are the Nerdy News Reporter. Your mommy bought you a brand-new suit. It's 100% Polyester!\n\nYou are standing outside Stonerock HQ. What do you do?",
+    "text": "You are the Nerdy News Reporter. Your mommy bought you a brand-new suit. It's 100% Polyester! You need to prepare today's broadcast about Stonerock's fleet troubles.",
     "status": { "type": "neutral", "text": "Nerdy Reporter" },
     "choices": [
-      { "text": "Show off your polyester suit to Trevor No", "next": "nerdy_show_suit" },
-      { "text": "Look for limited edition StonerockCoin flavors in the vending machine", "next": "nerdy_vending" }
+      { "text": "Draft a report about the stranded SS Mortus", "next": "nerdy_report_disaster" },
+      { "text": "Check your cryptocurrency portfolio for StonerockCoin", "next": "nerdy_buy_stonerockcoin" }
     ]
   },
-  "nerdy_show_suit": {
-    "text": "You run up to Trevor No and show off your suit.\n\nTrevor No: 'No.'\n\nYou drop into tears and start crying for your mommy. This is embarrassing.",
+  "nerdy_report_disaster": {
+    "text": "You prepare the news script. You need a compelling angle to boost viewership.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Request an interview with CEO Squidopia", "next": "nerdy_interview_squidopia" },
+      { "text": "Ask co-anchor Trevor No for advice on the script", "next": "nerdy_consult_trevor" }
+    ]
+  },
+  "nerdy_consult_trevor": {
+    "text": "You ask Trevor No if he wants to co-host the segment.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Ignore his uncooperative attitude and focus on your suit", "next": "nerdy_ignore_trevor" },
+      { "text": "Follow his advice to keep the report simple", "next": "nerdy_listen_trevor" }
+    ]
+  },
+  "nerdy_listen_trevor": {
+    "text": "Trevor No tells you to keep the story brief. The segment lacks detail, resulting in low ratings, and the director replaces you with an automated weather feed.\n\nIS THIS THE END OF STONEROCK???????",
     "status": { "type": "danger", "text": "GAME OVER" },
     "choices": [
       { "text": "Restart Adventure", "next": "start" }
     ]
   },
-  "nerdy_vending": {
-    "text": "You put a penny into the vending machine. It explodes! Thousands of coins fly everywhere, but your polyester suit protects you from the blast.\n\nYou tumble down an elevator shaft and land right in front of Squidopia's control desk.",
+  "nerdy_ignore_trevor": {
+    "text": "You focus on your performance. Your polyester suit is generating a significant amount of static electricity as you pace around the studio.",
     "status": { "type": "neutral", "text": "Nerdy Reporter" },
     "choices": [
-      { "text": "Tackle Trevor No using raw polyester friction", "next": "rick_tackle" },
-      { "text": "Yell 'IS THIS THE END OF STONEROCK???????' into the microphone", "next": "nerdy_yell" }
+      { "text": "Go live on air wearing the polyester suit", "next": "nerdy_wear_polyester" }
     ]
   },
-  "nerdy_yell": {
-    "text": "You yell 'IS THIS THE END OF STONEROCK???????' so loudly that the sound waves shatter the glass containment unit, releasing Chick Van Miller!\n\nSquidopia is startled and accidentally steps backward into his own nuclear reactor hatch.\n\nYou saved everyone by accident!\n\nYOU WIN!",
+  "nerdy_interview_squidopia": {
+    "text": "Squidopia agrees to an interview: 'We always make sure everyone is happy! Our new ship runs on 100% solar power!'",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Ask him about the battery capacity issues", "next": "nerdy_ask_about_batteries" },
+      { "text": "Ask him about the rumored hybrid diesel backup engines", "next": "nerdy_ask_about_hybrid" }
+    ]
+  },
+  "nerdy_ask_about_batteries": {
+    "text": "You press him on the battery limitations. Agitated, Squidopia tries to demonstrate a connection on a prototype cell, causing it to overheat and explode on set.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "nerdy_ask_about_hybrid": {
+    "text": "He admits: 'The hybrid solar-diesel model is much more cost-effective!' You get the first official confirmation of the hybrid design.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Conclude the interview and publish the scoop", "next": "nerdy_hybrid_scoop_win" }
+    ]
+  },
+  "nerdy_hybrid_scoop_win": {
+    "text": "Your interview clarifies the hybrid plans, reassuring investors and stabilizing the local market. The director praises your reporting style.\n\nYOU WIN!",
+    "status": { "type": "success", "text": "VICTORY" },
+    "choices": [
+      { "text": "Play Again", "next": "start" }
+    ]
+  },
+  "nerdy_buy_stonerockcoin": {
+    "text": "You log into your trading account. StonerockCoin is highly volatile, with values shifting rapidly.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Check your account balance immediately", "next": "nerdy_check_coin_balance" },
+      { "text": "Promote the coin live on air to drive up the price", "next": "nerdy_shill_coin_live" }
+    ]
+  },
+  "nerdy_check_coin_balance": {
+    "text": "You open your wallet. The coin has dropped significantly, leaving your balance near zero. You cannot pay your mommy back for the polyester suit.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Conclude the segment and review your financial options", "next": "nerdy_coin_crash_loss" }
+    ]
+  },
+  "nerdy_coin_crash_loss": {
+    "text": "Your entire allowance is gone. You are forced to take a second job cleaning the harbor docks.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "nerdy_shill_coin_live": {
+    "text": "You announce on air: 'StonerockCoin is highly stable and offers substantial returns!' Where do you focus your promotion?",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Post promotional links on the r/IsThisTheEndOfStonerock subreddit", "next": "nerdy_shill_reddit" },
+      { "text": "Continue the live television broadcast", "next": "nerdy_shill_on_air" }
+    ]
+  },
+  "nerdy_shill_reddit": {
+    "text": "Your posts are flagged by automated moderators. You are permanently banned from the platform for spamming promotion links, ending your online outreach campaign.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Return to the studio to finish the television segment", "next": "nerdy_reddit_perm_ban" }
+    ]
+  },
+  "nerdy_reddit_perm_ban": {
+    "text": "The ban affects your station credentials, and you are reassigned to archiving old tapes.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "nerdy_shill_on_air": {
+    "text": "The live broadcast continues. Your active pacing in the polyester suit has built up a very large static charge.",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Adjust the metal studio microphone", "next": "nerdy_wear_polyester" }
+    ]
+  },
+  "nerdy_wear_polyester": {
+    "text": "You reach for the microphone. What happens when you make contact?",
+    "status": { "type": "neutral", "text": "Nerdy Reporter" },
+    "choices": [
+      { "text": "Touch the metal stand to ground yourself", "next": "nerdy_static_shock_win" },
+      { "text": "Lean directly against the hot studio lighting array", "next": "nerdy_polyester_melting" }
+    ]
+  },
+  "nerdy_polyester_melting": {
+    "text": "The intense heat from the studio lights melts your polyester suit. The broadcast is interrupted by a technical difficulties screen.\n\nIS THIS THE END OF STONEROCK???????",
+    "status": { "type": "danger", "text": "GAME OVER" },
+    "choices": [
+      { "text": "Restart Adventure", "next": "start" }
+    ]
+  },
+  "nerdy_static_shock_win": {
+    "text": "A large static discharge travels from your hand to the microphone. The shock travels through the studio's wiring, temporarily shutting down the main transmitter, but the footage of the spark goes viral, boosting your popularity.\n\nYOU WIN!",
     "status": { "type": "success", "text": "VICTORY" },
     "choices": [
       { "text": "Play Again", "next": "start" }
