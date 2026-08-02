@@ -6,18 +6,27 @@
     <title>Stonerock News Corp - Adventure Game</title>
     <style>
         :root {
-            --bg-color: #0d0e15;
-            --container-bg: #151821;
-            --text-color: #e2e8f0;
+            --bg-color: #0b0d14;
+            --container-bg: #161922;
+            --text-color: #f1f5f9;
+            --subtext-color: #94a3b8;
             --accent-color: #ff0055;
+            --accent-glow: rgba(255, 0, 85, 0.25);
             --green-accent: #00ff66;
-            --border-color: #2a2e3d;
+            --border-color: #2e3447;
+            --btn-bg: #1e2330;
+            --btn-hover: #282e40;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Courier New', Courier, monospace;
+            /* Upgraded monospace stack for MUCH better legibility */
+            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Courier New', monospace;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -27,18 +36,22 @@
             min-height: 100vh;
         }
 
+        /* --- TICKER SECTION --- */
         .ticker-wrap {
             width: 100%;
             max-width: 800px;
             background: #000;
             border: 2px solid var(--accent-color);
-            padding: 8px;
+            border-radius: 6px;
+            padding: 12px 16px;
             margin-bottom: 20px;
-            box-sizing: border-box;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
-            font-size: 0.9em;
+            align-items: center;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
         .ticker-red {
@@ -49,69 +62,81 @@
             color: var(--green-accent);
         }
 
+        /* --- MAIN GAME CONTAINER --- */
         .game-container {
             width: 100%;
             max-width: 800px;
             background-color: var(--container-bg);
-            border: 3px solid var(--border-color);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
+        /* --- HEADER --- */
         .header {
             text-align: center;
             border-bottom: 2px dashed var(--border-color);
-            padding-bottom: 15px;
+            padding-bottom: 20px;
             margin-bottom: 25px;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 2.2em;
             color: var(--accent-color);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--accent-glow);
         }
 
         .theme-song {
             font-style: italic;
-            font-size: 0.85em;
-            color: #8a92b2;
-            margin-top: 5px;
+            font-size: 0.9em;
+            color: var(--subtext-color);
+            margin-top: 10px;
+            line-height: 1.4;
         }
 
+        /* --- STORY DISPLAY --- */
         .story-text {
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.15em;
+            line-height: 1.7; /* Generous line spacing makes long text WAY easier to read */
             margin-bottom: 30px;
-            min-height: 120px;
+            min-height: 100px;
             white-space: pre-line;
+            color: var(--text-color);
         }
 
+        /* --- CHOICES & BUTTONS --- */
         .choices-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .btn {
-            background-color: #1e2230;
-            border: 1px dashed var(--text-color);
+            background-color: var(--btn-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--subtext-color);
+            border-radius: 6px;
             color: var(--text-color);
-            padding: 15px;
+            padding: 16px 20px;
             font-size: 1em;
+            font-weight: 600;
             cursor: pointer;
             text-align: left;
-            transition: all 0.2s ease;
+            transition: all 0.2s ease-in-out;
             font-family: inherit;
+            line-height: 1.4;
         }
 
         .btn:hover {
-            background-color: var(--accent-color);
-            border-style: solid;
+            background-color: var(--btn-hover);
+            border-color: var(--accent-color);
+            border-left: 6px solid var(--accent-color);
             color: #fff;
-            transform: translateX(5px);
+            transform: translateX(6px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .btn-reset {
@@ -119,31 +144,38 @@
             border: 1px solid var(--accent-color);
             color: var(--accent-color);
             text-align: center;
+            border-left: 1px solid var(--accent-color);
         }
 
         .btn-reset:hover {
             background-color: var(--accent-color);
             color: #fff;
+            border-left: 1px solid var(--accent-color);
+        }
+
+        /* --- BADGES --- */
+        #status-container {
+            margin-bottom: 15px;
         }
 
         .status-badge {
             display: inline-block;
-            padding: 4px 8px;
-            font-size: 0.8em;
+            padding: 6px 12px;
+            font-size: 0.85em;
             font-weight: bold;
             text-transform: uppercase;
-            border-radius: 3px;
-            margin-bottom: 15px;
+            border-radius: 4px;
+            letter-spacing: 1px;
         }
 
         .badge-danger {
-            background-color: rgba(255, 0, 85, 0.2);
+            background-color: rgba(255, 0, 85, 0.15);
             color: var(--accent-color);
             border: 1px solid var(--accent-color);
         }
 
         .badge-success {
-            background-color: rgba(0, 255, 102, 0.2);
+            background-color: rgba(0, 255, 102, 0.15);
             color: var(--green-accent);
             border: 1px solid var(--green-accent);
         }
@@ -151,7 +183,7 @@
         .badge-neutral {
             background-color: rgba(255, 255, 255, 0.1);
             color: #fff;
-            border: 1px solid #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -159,7 +191,7 @@
 
     <!-- Stonerock Ticker -->
     <div class="ticker-wrap">
-        <span>STONEROCK NEWS CORP LIVE TICKER:</span>
+        <span>📡 STONEROCK LIVE TICKER:</span>
         <span id="ticker-status" class="ticker-red">StonerockCoin: Loading...</span>
     </div>
 
